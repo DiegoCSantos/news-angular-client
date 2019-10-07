@@ -1,0 +1,21 @@
+<form [formGroup]="form" >
+        <div class="form-group">
+            <label for="author">Autor</label>
+            <select class="form-control" name="author" formControlName="author">
+                <option *ngFor="let a of autores" [value]="a" >{{a.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="title">Titulo</label>
+            <input type="text" class="form-control" name="title" formControlName="title">
+        </div>
+        <div class="form-group">
+                <label for="summary">Resumo</label>
+                <textarea  class="form-control" name="summary" formControlName="summary"></textarea>
+        </div>
+        <div class="form-group">
+                <label for="content">Conteúdo</label>
+                <textarea  class="form-control" name="content" formControlName="content"></textarea>
+        </div>
+        <button (click) = "enviar()" class="btn btn-primary">Salvar</button>
+    </form>

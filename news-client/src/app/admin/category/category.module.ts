@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoryComponent } from './category/category.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [CategoryComponent],
+  declarations: [CategoryComponent, CategoryFormComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ]
 })
 export class CategoryModule { }

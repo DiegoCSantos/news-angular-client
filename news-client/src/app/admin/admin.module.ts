@@ -13,16 +13,22 @@ import { PostComponent } from './post/post/post.component';
 import { CommentComponent } from './comment/comment/comment.component';
 import { FileComponent } from './file/file/file.component';
 import { CategoryComponent } from './category/category/category.component';
+import { AuthorFormComponent } from './author/author-form/author-form.component';
+import { PostFormComponent } from './post/post-form/post-form.component';
+import { CategoryFormComponent } from './category/category-form/category-form.component';
 
 
   const adminRoutes: Routes=[ 
     {path:'admin', component: AdminComponent,
     children:[
       {path:'author', component: AuthorComponent},
+      {path:'author/form', component: AuthorFormComponent},
       {path:'post', component: PostComponent},
+      {path:'post/form', component: PostFormComponent},
       {path:'comment', component: CommentComponent},
       {path:'file', component: FileComponent},
-      {path:'category', component: CategoryComponent}
+      {path:'category', component: CategoryComponent},
+      {path:'category/form', component: CategoryFormComponent},
     ]},
    
   ];
