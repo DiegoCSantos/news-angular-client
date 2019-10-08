@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col"></th>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+     
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cat of categorias">
+        <th>
+            <a class="m-2"><i class="fa fa-eye"></i></a>
+            <a class="m-2" [routerLink]="['form']" [state] ="cat"><i class="fa fa-pencil"></i></a>
+            <a class="m-2"><i class="fa fa-trash"></i></a>
+        </th>
+        <td>{{cat.id}}</td>
+        <td>{{cat.name}}</td>
+        <td>{{cat.summary}}</td>
+        </tr>
+    </tbody>
+    </table>

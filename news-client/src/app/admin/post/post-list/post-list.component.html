@@ -1,0 +1,27 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col"></th>
+        <th scope="col">ID</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">resumo</th>
+        <th scope="col">Autor</th>
+        <th scope="col">conteudo</th>
+     
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of posts">
+        <th>
+            <a class="m-2"><i class="fa fa-eye"></i></a>
+            <a class="m-2" [routerLink]="['form']" [state] ="p"><i class="fa fa-pencil"></i></a>
+            <a class="m-2"><i class="fa fa-trash"></i></a>
+        </th>
+        <td>{{p.id}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.summary}}</td>
+        <td>{{p.author.name}}</td>
+        <td>{{p.content}}</td>
+        </tr>
+    </tbody>
+    </table>

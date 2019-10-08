@@ -1,0 +1,26 @@
+<table class="table table-striped">
+<thead>
+    <tr>
+    <th scope="col"></th>
+    <th scope="col">ID</th>
+    <th scope="col">Nome</th>
+    <th scope="col">E-mail</th>
+    <th scope="col">Resumo da Bio</th>
+    <th scope="col">Bio</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let autor of autores">
+    <th>
+        <a class="m-2"><i class="fa fa-eye"></i></a>
+        <a class="m-2" [routerLink]="['form']" [state] ="autor"><i class="fa fa-pencil"></i></a>
+        <a class="m-2"><i class="fa fa-trash"></i></a>
+    </th>
+    <td>{{autor.id}}</td>
+    <td>{{autor.name}}</td>
+    <td>{{autor.email}}</td>
+    <td>@{{autor.bioSummary}}</td>
+    <td>@{{autor.bio}}</td>
+    </tr>
+</tbody>
+</table>

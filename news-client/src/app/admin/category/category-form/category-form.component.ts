@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category-form',
@@ -9,13 +10,18 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CategoryFormComponent implements OnInit {
 
   form:FormGroup;
+  category =null;
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(
+    private formBuilder : FormBuilder, 
+    private router:Router) { 
+      this.category =this.router.getCurrentNavigation().extras.state;
+    }
 
   ngOnInit() {
     this.form =this.formBuilder.group({
-      name:[''],
-      summary:[''],
+      name:[this.category?this.category.name:''],
+      summary:[this.category?this.category.summary:''],
     });
   }
 
