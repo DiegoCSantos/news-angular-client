@@ -5,6 +5,7 @@ import { CategoryFormComponent } from './category-form/category-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    HttpClient
   ]
 })
 export class CategoryModule { }

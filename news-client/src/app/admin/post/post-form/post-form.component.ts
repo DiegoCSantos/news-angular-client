@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { PostService } from '../post.service';
+import { Post } from '../post';
 
 @Component({
   selector: 'post-form',
@@ -22,7 +24,8 @@ export class PostFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router:Router
+    private router:Router,
+    private postService:PostService
     ) { 
       this.post =this.router.getCurrentNavigation().extras.state;
       console.log(this.post);
@@ -38,8 +41,14 @@ export class PostFormComponent implements OnInit {
   }
 
   enviar(){
-    const postN =this.form.getRawValue();
-    console.log(postN);
+    const postN:Post =this.form.getRawValue();
+    this.postService.incluir(postN).subscribe(
+      () =>{
+         console.log("OK") ;
+         this.form.reset();
+        this.router.navigate(['admin/post/']);
+      },
+      () => console.log("ERRO"));
   }
 
 }
